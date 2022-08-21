@@ -1,0 +1,17 @@
+#include <iostream>
+ #include <string>
+#include <algorithm>
+using namespace std;
+
+std::string abbrevName(std::string name)
+{
+for_each(name.begin(), name.end(), [](char& c) {
+    c = toupper(c);
+    });
+  //char first=a[0];
+  //char last=a[6];
+  int num=name.find_last_of(" ");
+  string ss=name.substr(0,1);
+  ss =ss+"."+ name.substr(num+1, 1);
+return ss;
+}
